@@ -1,5 +1,4 @@
 # Option Musique TD MIDI
-TD Machine MIDI
 
 ## Prérequis
 * STM32CubeIDE 1.10.1 (ou supérieur)
