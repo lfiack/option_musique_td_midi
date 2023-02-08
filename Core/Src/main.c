@@ -73,15 +73,18 @@ int __io_putchar(int ch) {
 	return ch;
 }
 
-static void onCtlChange(uint8_t ch, uint8_t num, uint8_t value){
+static void ctl_change_cb(uint8_t ch, uint8_t num, uint8_t value){
+	printf("ctl_change_cb : ");
 	printf("CC %d %d %d\r\n", ch, num, value);
 }
 
-static void onNoteOn(uint8_t ch, uint8_t note, uint8_t vel){
+static void note_on_cb(uint8_t ch, uint8_t note, uint8_t vel){
+	printf("note_on_cb : ");
 	printf("On %d %d %d\r\n", ch, note, vel);
 }
 
-static void onNoteOff(uint8_t ch, uint8_t note, uint8_t vel){
+static void note_off_cb(uint8_t ch, uint8_t note, uint8_t vel){
+	printf("note_off_cb : ");
 	printf("Off %d %d %d\r\n", ch, note, vel);
 }
 
@@ -134,9 +137,9 @@ int main(void)
 	create_midi_in();
 
 	midi_init();
-	setHdlNoteOff(onNoteOff);
-	setHdlNoteOn(onNoteOn);
-	setHdlCtlChange(onCtlChange);
+	setHdlNoteOff(note_off_cb);
+	setHdlNoteOn(note_on_cb);
+	setHdlCtlChange(ctl_change_cb);
 
 	shell_init();
 	shell_add('c', disp_cc_values, "Display CC values");
