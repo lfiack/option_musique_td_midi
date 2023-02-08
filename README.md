@@ -11,7 +11,7 @@
 ## Récupération du projet
 * Clonez ou téléchargez le projet dans un dossier sans espace ni accent
 
-    git clone git@github.com:lfiack/option_musique_td_midi.git
+ git clone https://github.com/lfiack/option_musique_td_midi.git
 
 ## Importer le projet dans STM32CubeIDE
 * Lancez STM32CubeIDE
@@ -33,7 +33,7 @@
 * Dans un terminal, lancez minicom
     * Sous Windows, vous pouvez utiliser TeraTerm, Putty ou autre, débrouillez-vous...
 
-    minicom -D /dev/ttyACM0
+ minicom -D /dev/ttyACM0
 
 
 * Redémarrez la carte (bouton poussoir noir), un prompt devrait apparaître dans minicom
@@ -65,3 +65,10 @@
     * Testez dans renoise
 * Modifiez le code pour envoyer des messages \texttt{Control Change} lorsque l'on touche à un slider
     * Testez dans renoise
+
+## Aller plus loin
+* Quelques suggestions :
+    * Dans renoise, créez un rythme, ajoutez des effets (delay, reverb...), jouez avec les paramètres de ces effets
+    * Ajoutez des onglets pour pouvoir contrôler plus de paramètres
+    * Créez un clavier dans un nouvel onglet
+    * Développez un synthé : utilisez le CODEC audio pour sortir du son
